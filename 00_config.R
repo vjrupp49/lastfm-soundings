@@ -4,10 +4,10 @@
 # ==========================================================
 
 # ---- Credentials -----------------------------------------
-# Better practice: put LASTFM_API_KEY=... in your .Renviron
-# (usethis::edit_r_environ(), then restart R) and delete the
-# hard-coded fallback below.
-API_KEY  <- Sys.getenv("LASTFM_API_KEY", "REDACTED_LASTFM_KEY")
+# Set LASTFM_API_KEY in your .Renviron
+# (usethis::edit_r_environ(), then restart R).
+API_KEY  <- Sys.getenv("LASTFM_API_KEY")
+if (identical(API_KEY, "")) stop("Set LASTFM_API_KEY as an environment variable before running.")
 USERNAME <- "listener_b"
 USER_AGENT_STRING <- "R-listening-halflife/1.0 (personal analysis)"
 
@@ -42,4 +42,3 @@ HIGHLIGHT_ARTISTS <- NULL
 `%||%` <- function(a, b) if (is.null(a) || length(a) == 0) b else a
 
 message("Config loaded. User: ", USERNAME)
-

@@ -8,7 +8,7 @@
 # (usethis::edit_r_environ(), then restart R).
 API_KEY  <- Sys.getenv("LASTFM_API_KEY")
 if (identical(API_KEY, "")) stop("Set LASTFM_API_KEY as an environment variable before running.")
-USERNAME <- "listener_b"
+USERNAME <- Sys.getenv("LASTFM_USER", "your_lastfm_username")  # set LASTFM_USER to your Last.fm account
 USER_AGENT_STRING <- "R-listening-halflife/1.0 (personal analysis)"
 
 # ---- Folders ---------------------------------------------

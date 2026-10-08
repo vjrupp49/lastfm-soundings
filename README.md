@@ -70,3 +70,7 @@ The live app and every plot use **my own** Last.fm listening history, pulled thr
 [Wake](https://github.com/vjrupp49/lastfm-influence-network) is the companion project: who tends to lead whose listening within a group of friends.
 
 Built by Vincent Rupp.
+
+---
+
+Built by Vincent Rupp. Released under the MIT License; see `LICENSE`.

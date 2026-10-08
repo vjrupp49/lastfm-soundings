@@ -5,7 +5,6 @@ Artists positioned by **who you hear them beside**, not by what anyone calls the
 A Last.fm listening history gets turned into a taste-space embedding and rendered as an interactive map — regions of the map are communities of artists that actually show up together in real sessions, not genre labels.
 
 **[Open the live app →](https://vincentrupp1.shinyapps.io/ArtistSimilarity/)**
-Also deployed for a second listener: **[listener_b's Soundings →](https://vincentrupp1.shinyapps.io/soundings-listener_b/)**
 
 ![An atlas of listening](plots/01_atlas.png)
 
@@ -61,3 +60,13 @@ Rscript -e "shiny::runApp('03_app.R')"
 ## Stack
 
 R · Last.fm API · Matrix/irlba (PPMI + SVD) · igraph (Leiden) · uwot (UMAP) · Shiny · shinyapps.io
+
+## Data
+
+The live app and every plot use **my own** Last.fm listening history, pulled through the public Last.fm API. No scrobble data is stored in this repo; `data/` is git-ignored. To reproduce it, point the pipeline at your own account (see above) and set `LASTFM_API_KEY` in your environment (never commit it).
+
+## Related
+
+[Wake](https://github.com/vjrupp49/lastfm-influence-network) is the companion project: who tends to lead whose listening within a group of friends.
+
+Built by Vincent Rupp.
